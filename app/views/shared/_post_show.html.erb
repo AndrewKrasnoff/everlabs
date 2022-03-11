@@ -1,0 +1,43 @@
+<h3><%= @post.title %></h3>
+
+<div>
+  <small class="text-secondary">
+    <%= @post.created_at.to_date.strftime("%d %B, %Y") %>  
+  </small>
+</div>  
+<br><br>
+
+<p><%= @post.body %></p>
+
+<%= link_to 'Back', :back, class: 'btn btn-outline-secondary btn-sm' %>
+<% if logged_in? and current_page? admin_post_path(@post) %>
+  <%= link_to 'Edit', edit_admin_post_path(@post), class: "btn btn-primary btn-sm" %>
+<% end %>
+<br><br><br><br>
+
+<% if not (logged_in? and current_page? admin_post_path(@post)) %>
+  <%= render 'comments/form' %>
+  <br><br>
+<% end %>
+<% if @post.comments.count > 0 %>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    View all comments
+  </button>
+  <br><br>
+  
+  <div class="collapse" id="collapseExample">
+    <% @post.comments.reverse.each do |comment| %>
+      <% if comment.body != nil %>
+        <div class="card card-body" style='margin-bottom: 3px'>
+          <%= comment.body %>
+          <% if logged_in? and current_page? admin_post_path(@post) %>
+            <div class="d-grid gap-2 d-md-block">
+              <%= link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure you want to delete this article?' },  class: "btn btn-outline-danger btn-sm" %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>    
+    <% end %>  
+  </div>
+<% end %>  
+
