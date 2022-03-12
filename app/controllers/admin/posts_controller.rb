@@ -52,7 +52,6 @@ class Admin::PostsController < ApplicationController
     @posts = @q.result(distinct: true)
   end
 
-
   def post_params
     params.require(:post).permit(:title, :body, :position)
   end
