@@ -9,10 +9,10 @@
   <thead>
     <tr>
       <th scope="col">Title</th>
-      <th scope="col">Body</th>
-      <th scope="col">Position</th>
-      <th scope="col">Created</th>
-      <th scope="col">Updated</th>
+      <th scope="col" width=50%>Body</th>
+      <th scope="col"><%= sort_link(@q, :position) %></th>
+      <th scope="col"><%= sort_link(@q, :created_at) %></th>
+      <th scope="col"><%= sort_link(@q, :updated_at) %></th>
       <% if logged_in? and current_page? admin_posts_path %>
         <th></th>
       <% end %>
