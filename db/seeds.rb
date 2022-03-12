@@ -1,1 +1,1 @@
-Admin.create(Name: 'Admin', password: 'test', password_confirmation: 'test')
+Admin.create(name: 'Admin', password: 'test', password_confirmation: 'test')
