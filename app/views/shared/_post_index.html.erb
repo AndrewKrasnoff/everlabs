@@ -26,8 +26,9 @@
          </td>
          <td><small><%== post.body %></small></td>
          <td><%= post.position %></td>
-         <td><%= post.created_at %></td>
-         <td><%= post.updated_at %></td>
+         
+         <td><small><%= post.created_at.strftime("%e.%m.%y at %T") %></small></td>
+         <td><small><%= post.updated_at.strftime("%e.%m.%y at %T") %></small></td>
          <% if logged_in? and current_page? admin_posts_path %>
            <td>
              <%= link_to 'Edit', edit_admin_post_path(post), class: "btn btn-primary btn-sm" %>
