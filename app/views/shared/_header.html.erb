@@ -14,7 +14,7 @@
       <ul class="navbar-nav justify-content-end">
         <% if logged_in? %>
           <li class="nav-item">
-            <%= link_to 'Admin Home', admin_posts_path, class: "nav-link active" %>
+            <%= link_to 'Admin Area', admin_posts_path, class: "nav-link active" %>
           </li>  
           <li class="nav-item">
             <%= link_to 'Create Post', new_admin_post_path, class: "nav-link active" %>
@@ -27,12 +27,23 @@
             <%= link_to 'Admin Login', new_admin_session_path, class: "nav-link active" %>
           </li>
         <% end %>
-
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      
+      <%= render 'shared/search' if controller_name == 'posts' %>
+
     </div>
   </div>
 </nav>
+<% if controller_path == 'admin/posts' %>
+  <div class="alert alert-warning mt-3" role="alert">
+    You are in admin panel. Now you can:
+    <small>
+    <ul>
+      <li>Create/Edit/Delete Posts</li>
+      <li>Delete Comments</li>
+    </ul>  
+    </small>
+    Creating new commets are not avaliable for Admin :)
+  </div>
+  
+<% end %>
