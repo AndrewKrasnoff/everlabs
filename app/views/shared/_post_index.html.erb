@@ -24,7 +24,7 @@
          <td>
            <%= link_to post.title, (current_page? admin_posts_path) ? admin_post_path(post) : post_path(post) %>
          </td>
-         <td><%= post.body %></td>
+         <td><small><%== post.body %></small></td>
          <td><%= post.position %></td>
          <td><%= post.created_at %></td>
          <td><%= post.updated_at %></td>

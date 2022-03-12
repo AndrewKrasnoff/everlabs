@@ -7,7 +7,7 @@
 </div>  
 <br><br>
 
-<p><%= @post.body %></p>
+<p><%== @post.body %></p>
 
 <%= link_to 'Back', :back, class: 'btn btn-outline-secondary btn-sm' %>
 <% if logged_in? and current_page? admin_post_path(@post) %>

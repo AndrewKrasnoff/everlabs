@@ -17,7 +17,8 @@
   </div>
   <div class="mb-3" >
     <%= form.label :body, class: "form-label" %>
-    <%= form.rich_text_area :body, class: "form-control form-control-sm", style: "height: 150px"  %>
+    <%= form.text_area :body, class: "tinymce", :rows => 20  %>
+    <%= tinymce %>
   </div>
   <div class="mb-3" >
     <%= form.label :position, class: "form-label" %>

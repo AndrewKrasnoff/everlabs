@@ -18,7 +18,7 @@ class Admin::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to [:admin, @post], success: 'Article was created successfuly'
+      redirect_to admin_posts_path, success: 'Article was created successfuly'
     else
       flash.now[:danger] = 'Article was not created'
       render :new
