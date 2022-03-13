@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'posts#index'
+  get '/firstfive/', to: 'posts#firstfive'
+  get '/lastfive/', to: 'posts#lastfive'
   resources :posts, only: %i[show index] do
     resources :comments
   end

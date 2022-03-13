@@ -3,11 +3,7 @@ class Admin::PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   before_action :set_q
 
-  def index
-    @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true)
-    # @posts = Post.all
-  end
+  def index; end
 
   def show; end
 

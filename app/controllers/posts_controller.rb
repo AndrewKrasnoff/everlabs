@@ -3,10 +3,17 @@ class PostsController < ApplicationController
   before_action :set_post, only: :show
 
   def index
-    # @posts = Post.all
   end
 
   def show; end
+
+  def firstfive
+    @posts = Post.first(5)
+  end
+
+  def lastfive
+    @posts = Post.last(5)
+  end
 
   private
 
