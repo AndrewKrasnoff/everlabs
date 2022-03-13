@@ -48,5 +48,5 @@
   </div>
 <% else %>  
   <br>
-  <%= render 'shared/search_form' if controller_name != 'sessions' %>
+  <%= render 'shared/search_form' if (controller_name != 'sessions') && (controller.action_name == 'index') %>
 <% end %>
