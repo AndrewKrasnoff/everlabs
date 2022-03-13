@@ -1,8 +1,7 @@
 
 <h3>Posts' List</h3>
 <% if controller_path == 'posts' %>
-  <%= link_to 'Show FIRST Five Posts', firstfive_url %><br>
-  <%= link_to 'Show LAST Five Posts', lastfive_url %>
+  <%= link_to 'Five Posts Only', indexfive_url %><br>
 <% end %>
 <br><br>
 <% if logged_in? and current_page? admin_posts_path %>

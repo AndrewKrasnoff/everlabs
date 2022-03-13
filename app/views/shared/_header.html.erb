@@ -34,6 +34,7 @@
     </div>
   </div>
 </nav>
+
 <% if controller_path == 'admin/posts' %>
   <div class="alert alert-warning mt-3" role="alert">
     You are in admin panel. Now you can:
@@ -44,5 +45,11 @@
     </ul>  
     </small>
     Creating new commets is not avaliable for Admin :)
+  </div>
+<% end %>
+
+<% if controller.action_name == 'indexfive' %>
+  <div class="alert alert-warning mt-3" role="alert">
+    Only 5 results are displayed right now. To quit this option <%= link_to 'click here', root_path %>
   </div>
 <% end %>
