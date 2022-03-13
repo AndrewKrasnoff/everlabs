@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :set_q, except: :index_five
-  before_action :set_post, only: :show
 
   def index; end
 
