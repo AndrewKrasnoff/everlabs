@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'posts#index'
   get '/indexfive/', to: 'posts#indexfive'
+  get '/search/', to: 'searches#index'
   resources :posts, only: %i[show index] do
     resources :comments
   end

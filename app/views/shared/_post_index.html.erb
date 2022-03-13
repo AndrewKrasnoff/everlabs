@@ -1,8 +1,3 @@
-
-<h3>Posts' List</h3>
-<% if controller_path == 'posts' %>
-  <%= link_to 'Five Posts Only', indexfive_url %><br>
-<% end %>
 <br><br>
 <% if logged_in? and current_page? admin_posts_path %>
   <%= link_to 'Create Post', new_admin_post_path, class: "btn btn-primary btn-sm" %>
@@ -13,9 +8,9 @@
     <tr>
       <th scope="col">Title</th>
       <th scope="col" width=50%>Body (truncated, plain text)</th>
-      <th scope="col"><%= sort_link(@q, :position) %></th>
-      <th scope="col"><%= sort_link(@q, :created_at) %></th>
-      <th scope="col"><%= sort_link(@q, :updated_at) %></th>
+      <th scope="col">Position</th>
+      <th scope="col">Created At</th>
+      <th scope="col">Updated At</th>
       <% if logged_in? and current_page? admin_posts_path %>
         <th></th>
       <% end %>

@@ -1,9 +1,10 @@
 class Admin::PostsController < ApplicationController
   before_action :authorized
   before_action :set_post, only: %i[show edit update destroy]
-  before_action :set_q
 
-  def index; end
+  def index
+    @posts = Post.all
+  end
 
   def show; end
 
@@ -41,11 +42,6 @@ class Admin::PostsController < ApplicationController
 
   def set_post
     @post = Post.find params[:id]
-  end
-
-  def set_q
-    @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true)
   end
 
   def post_params

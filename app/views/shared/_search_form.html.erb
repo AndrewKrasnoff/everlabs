@@ -1,0 +1,29 @@
+<div class="card card-body">
+  <%= form_with url: "/search", method: :get do |form| %>
+    <%= form.label :query, "Search for:" %>&nbsp;&nbsp;
+    <%= form.text_field :query, class: "form-control me-2" %><br>
+
+    Sorting on: &nbsp;&nbsp;&nbsp;&nbsp;
+    <%= form.select :sort_field_1, ["none", "position", "created_at", "updated_at"], class: "my_style_class",  class: "form-control me-2"%>
+    <%= form.select :sort_order_1, ["ASC", "DESC"], class: "form-select" %>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <%= form.select :sort_field_2, ["none", "position", "created_at", "updated_at"] %>
+    <%= form.select :sort_order_2, ["ASC", "DESC"] %>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <%= form.select :sort_field_3, ["none", "position", "created_at", "updated_at"] %>
+    <%= form.select :sort_order_3, ["ASC", "DESC"] %>
+
+    <br><br>
+    Show results: &nbsp;&nbsp;&nbsp;&nbsp;
+    <%= form.radio_button :show_result, "show_all", :checked => true, class: "form-check-input" %>
+    <%= form.label :show_all, "All", class: "form-check-label" %> &nbsp;&nbsp;
+    <%= form.radio_button :show_result, "show_first", class: "form-check-input" %>
+    <%= form.label :show_first, "Only First 5", class: "form-check-label" %> &nbsp;&nbsp;
+    <%= form.radio_button :show_result, "show_last", class: "form-check-input"   %>
+    <%= form.label :show_first, "Only Last 5", class: "form-check-label" %>
+    
+
+    <br><br>
+    <%= form.submit "Search", class: "btn btn-primary btn-sm" %>
+  <% end %>
+</div>

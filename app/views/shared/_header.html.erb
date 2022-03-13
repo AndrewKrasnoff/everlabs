@@ -28,12 +28,12 @@
           </li>
         <% end %>
       </ul>
-      
-      <%= render 'shared/search' if controller_name == 'posts' %>
 
     </div>
   </div>
 </nav>
+
+<%= render 'shared/flash' %>
 
 <% if controller_path == 'admin/posts' %>
   <div class="alert alert-warning mt-3" role="alert">
@@ -46,10 +46,7 @@
     </small>
     Creating new commets is not avaliable for Admin :)
   </div>
-<% end %>
-
-<% if controller.action_name == 'indexfive' %>
-  <div class="alert alert-warning mt-3" role="alert">
-    Only 5 results are displayed right now. To quit this option <%= link_to 'click here', root_path %>
-  </div>
+<% else %>  
+  <br>
+  <%= render 'shared/search_form' if controller_name != 'sessions' %>
 <% end %>
