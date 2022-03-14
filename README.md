@@ -8,7 +8,7 @@ https://everlabs-test.herokuapp.com/
 
 admin account
 
-login: admin
+login: admin<br>
 password: test
 
 ### Task description
