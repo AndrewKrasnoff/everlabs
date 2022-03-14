@@ -2,7 +2,17 @@
 
 ## This is test application
 
+### Deployed at
+
+https://everlabs-test.herokuapp.com/
+
+admin account
+
+login: admin
+password: test
+
 ### Task description
+
 
 1. Створити кастомну адмінку за допомогою якої буде можливість створювати об’єкти:
 
